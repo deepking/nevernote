@@ -174,6 +174,8 @@ console.log("1" == 1);
 
 ## if
 
+就算只有一行code也加上大括號 { }, 減少錯誤。
+
 ```javascript
 if (1 === 1) {
     console.log("1 is 1");
@@ -214,7 +216,19 @@ var i;
 for (i = 0; i < array.length; i++) {
     console.log(array[i]);
 }
+```
 
+### break
+中斷迴圈
+```javascript
+var array = [1, 2, 3, 4, 5];
+var i;
+for (i = 0; i < array.length; i++) {
+    var x = array[i];
+    if (x === 3)
+        break;
+}
+console.log(i);
 ```
 
 ## switch
@@ -277,7 +291,7 @@ undefined 宣告的變數未給值
 
 null 意指『沒有值』。被視為一個物件(object)。 
 
-```
+```javascript
 var undefinedVar;
 console.log(undefinedVar);
 console.log(typeof(undefined));
@@ -285,6 +299,52 @@ console.log(typeof(undefined));
 var nullVar = null;
 console.log(nullVar);
 console.log(typeof(null));
+```
+
+# false condition
+
+0, '', undefined, null 被視為 fasle
+
+```javascript
+if (0) {
+    console.log("0 is true");
+} else {
+    console.log("0 is false");
+}
+
+if ('') {
+    console.log("'' is true");
+} else {
+    console.log("'' is false");
+}
+
+if (undefined) {
+    console.log("undefined is true");
+} else {
+    console.log("undefined is false");
+}
+
+if (null) {
+    console.log("null is true");
+} else {
+    console.log("null is false");
+}
+
+
+// 常用來判斷變數是否有值
+var x;
+if (x) {
+    console.log("x is ", x);
+} else {
+    console.log("ERROR: x is invalid");
+}
+x = 1;
+if (x) {
+    console.log("x is ", x);
+} else {
+    console.log("ERROR: x is invalid");
+}
+
 ```
 
 
