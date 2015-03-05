@@ -63,7 +63,7 @@ console.log(array.length);
 console.log(array[0]);
 console.log(array[1]);
 
-// 設質
+// 設值
 array[0] = 5566;
 console.log(array[0]);
 ```
@@ -76,7 +76,7 @@ var person = {firstName: "Sherlock", lastName: "Holmes"};
 console.log(person.firstName);
 console.log(person.lastName);
 
-// 設質
+// 設值
 person.firstName = "織田";
 person.lastName = "信長";
 console.log(person.firstName);
@@ -85,7 +85,7 @@ console.log(person.lastName);
 
 //另一種方式
 
-// 設質
+// 設值
 person["firstName"] = "Sherlock";
 person["lastName"] = "Holmes";
 
@@ -164,7 +164,7 @@ console.log((5 === 8) || (5 === 5));
 console.log(!(5 === 8)); 
 ```
 
-兩個 '==' 容易出錯，需要才使用, 一般儘量使用 '==='。'==' 它會自動轉 type,
+'==' 容易出錯，需要才使用, 一般儘量使用 '==='。'==' 它會自動轉 type,
 例如 string "1" 跟 number 1 會被視為相同。
 ```javascript
 console.log("1" == 1);
