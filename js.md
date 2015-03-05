@@ -85,6 +85,44 @@ console.log(person["firstName"]);
 console.log(person["lastName"]);
 ```
 
+# Arithmetic
+在 node 測試以下運算結果
+
+```
+> 2 + 3
+5
+> 2 - 3
+-1
+> 2 * 3
+6
+> 2 / 3
+0.6666666666666666
+> 2 % 3
+2
+> var x = 0;
+undefined
+> x++
+0
+> x
+1
+> x--
+1
+> x
+0
+> 
+```
+
+| Operator | Description     |
+| -------- | --------------- |
+| + 	   | Addition        |
+| - 	   | Subtraction     |
+| * 	   | Multiplication  |
+| / 	   | Division        |
+| % 	   | Modulus         |
+| ++ 	   | Increment       |
+| -- 	   | Decrement       |
+
+
 # Comparison
 
 ```javascript
