@@ -312,6 +312,16 @@ console.log(foo);
 var bar = (1 === 0) ? 1 : 0;
 console.log(bar);
 ```
+等同於
+```javascript
+var flag = true;
+var foo; 
+if (flag) { 
+    fooo = 1; 
+} else { 
+    foo = 0; 
+}
+```
 
 # null & undefined
 
