@@ -399,9 +399,10 @@ if (null) {
 } else {
     console.log("null is false");
 }
+```
 
-
-// 常用來判斷變數是否有值
+常用來判斷變數是否有值
+```javascript
 var x;
 if (x) {
     console.log("x is ", x);
@@ -415,8 +416,23 @@ if (x) {
     console.log("ERROR: x is invalid");
 }
 
+var y = "";
+if (!y) {
+    y = "Hello world";
+}
+console.log(y);
 ```
 
+常用來給預設值,
+```javascript
+function foo(x) {
+    var y = x || "default string"; 
+    console.log(y);
+}
+
+foo("my string");
+foo("");
+```
 
 # Function
 
@@ -466,7 +482,9 @@ var x = defaultParameter(7);
 console.log(x);
 ```
 
-# exception 
+# Exception 
 
-# require
+# Callback
+
+# Require
 
