@@ -246,6 +246,38 @@ for (i = 0; i < array.length; i++) {
 }
 ```
 
+### iterate object 
+```javascript
+var person = {firstName: "Sherlock", lastName: "Holmes"};
+var key;
+var value;
+for (key in person) {
+   value = person[key];
+   console.log(key, value);
+}
+```
+
+### for..in array
+
+for..in 也可以用在 array, 但有個情況需要注意, 小心誤用
+```javascript
+var a = [];
+a[5] = 5; // Perfectly legal JavaScript that resizes the array.
+var i;
+var value;
+
+for (i = 0; i < a.length; i++) {
+    value = a[i];
+    console.log(i, value);
+}
+
+for (i in a) {
+    value = a[i];
+    console.log(i, value);
+}
+```
+for..in array 只會 show index 5!!
+
 ### break
 中斷迴圈
 ```javascript
@@ -433,3 +465,8 @@ function defaultParameter(x, y) {
 var x = defaultParameter(7);
 console.log(x);
 ```
+
+# exception 
+
+# require
+
