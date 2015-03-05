@@ -42,6 +42,15 @@ console.log(arrayType);
 console.log(objectType);
 console.log(dateType);
 console.log(functionType());
+
+// typeof 回傳 type
+console.log("numType", typeof(numType));
+console.log("stringType", typeof(stringType));
+console.log("booleanType", typeof(booleanType));
+console.log("arrayType", typeof(arrayType));
+console.log("objectType", typeof(objectType));
+console.log("dateType", typeof(dateType));
+console.log("functionType", typeof(functionType));
 ```
 
 ## Array 
@@ -263,3 +272,66 @@ console.log(bar);
 ```
 
 # null & undefined
+
+undefined 宣告的變數未給值
+
+null 意指『沒有值』。被視為一個物件(object)。 
+
+```
+var undefinedVar;
+console.log(undefinedVar);
+console.log(typeof(undefined));
+
+var nullVar = null;
+console.log(nullVar);
+console.log(typeof(null));
+```
+
+
+# Function
+
+```javascript
+// void 沒有 return 值
+function voidFunction() {
+    console.log("hello world");
+}
+
+voidFunction();
+
+// 有名稱
+function namedFunction(x, y) {
+    return x + y;
+}
+
+var x = namedFunction(1, 2);
+console.log(x);
+
+// 沒有名稱
+var anonymousFunction = function(x, y) {
+    return x + y;
+};
+
+var x = anonymousFunction(3, 4);
+console.log(x);
+
+
+// 動態參數, 由 arguments 取得參數, 為一個 array
+function variableParameter() {
+   var x = arguments[0];
+   var y = arguments[1];
+   return x + y;
+}
+
+var x = variableParameter(5, 6);
+console.log(x);
+
+// 預設參數
+function defaultParameter(x, y) {
+    x = typeof x !== 'undefined' ? x : 0;
+    y = typeof y !== 'undefined' ? y : 8;
+    return x + y;
+}
+
+var x = defaultParameter(7);
+console.log(x);
+```
