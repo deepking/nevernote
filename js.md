@@ -1,4 +1,5 @@
 # 測試環境
+## node
 執行 node, 以下的 sample 都用 node 執行測試。
 ```
 $ node
@@ -11,6 +12,33 @@ undefined
 1
 > 1 + 1
 2
+```
+
+或者在一個檔案裡面編輯 js code, mylib.js
+```javascript
+console.log("hello world");
+var x = 1;
+console.log(x);
+```
+執行
+```
+$ node mylib.js
+```
+
+## shebang
+又或者用 shebang 的方式, myexec.js
+```
+#!/usr/bin/env node
+
+console.log("Hello World");
+```
+需要加上執行權限
+```
+$ chmod +x myexec.js
+```
+執行
+```
+$ ./myexec.js
 ```
 
 
