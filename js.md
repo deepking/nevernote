@@ -559,6 +559,28 @@ try {
 
 
 # Callback
+JS error handling 比較常用 callback 的方式
+
+```
+function use(handler) {
+    var ok = true;
+    if (ok) {
+        handler(undefined, "return data");
+    } else {
+        var err = new Error("Something error");
+        handler(err);
+    }
+}
+
+use(function(err, data) {
+    if (err) {
+        console.error(err.stack);
+    } else {
+        // handle data
+        console.log(data);
+    }
+});
+```
 
 # Require
 
