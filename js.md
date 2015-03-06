@@ -563,7 +563,7 @@ JS error handling 比較常用 callback 的方式
 
 ```
 function use(handler) {
-    var ok = true;
+    var ok = false;
     if (ok) {
         handler(undefined, "return data");
     } else {
