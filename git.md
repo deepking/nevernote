@@ -51,6 +51,18 @@ show log on just one line per commit
 $ git config format.pretty oneline
 ```
 
+## editor
+### Sublime Text 2
+```
+git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"
+```
+
+### Sublime Text 3
+```
+git config --global core.editor "'c:/program files/sublime text 3/subl.exe' -w"
+```
+
+
 # Add & Commit
 
 ![Workflow](http://rogerdudler.github.io/git-guide/img/trees.png)
@@ -139,4 +151,125 @@ index 7bba8c8..e69de29 100644
 -line 2
 ```
 
+# Branch
 
+再修改 a.txt 並 commit
+```
+line 1
+line 2
+line 3
+```
+
+```
+$ git add a.txt
+$ git commit -m "append line3"
+$ git log
+6af315c02575ecd95cdb5010eb0947c05cd34e42 append line 3
+b2a1931a190d38dc1051226418f073141b9d588d update a.txt
+41e0e9f0214933600cedd351fbb7d3a49eab3fde init
+```
+突然覺得 line3 不太好，想改好一點的寫法，又不想直接丟掉 line3,
+這時可以退回第2個 Commit，開一個 Branch 寫新的 Code
+```
+$ git checkout -b experiment b2a1931
+Switched to a new branch 'experiment'
+
+$ git log --graph --oneline --decorate --all
+* 6af315c (master) append line 3
+* b2a1931 (HEAD, experiment) update a.txt
+* 41e0e9f init
+
+$ cat a.txt
+line 1
+line 2
+```
+可以看到目前 HEAD  在 branch experiment, a.txt 的內容是還沒有 line 3 
+
+
+修改 a.txt 再 commit
+```
+line 1
+line 2
+new line 3
+```
+commit
+```
+$ git add a.txt
+$ git commit -m "new line 3"
+[experiment 01f7130] new line 3
+ 1 file changed, 1 insertion(+)
+
+$ git log --graph --oneline --decorate --all
+* 01f7130 (HEAD, experiment) new line 3
+| * 6af315c (master) append line 3
+|/  
+* b2a1931 update a.txt
+* 41e0e9f init
+```
+切換到 master
+```
+$ git checkout master
+Switched to branch 'master'
+```
+
+把 experiment branch, merge 到 master
+```
+$ git merge experiment
+Auto-merging a.txt
+CONFLICT (content): Merge conflict in a.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ cat a.txt
+line 1
+line 2
+<<<<<<< HEAD
+line 3
+=======
+new line 3
+>>>>>>> experiment
+```
+git 發現 line 3 有 Conflict, 需要你手動 merger, 改成你想要的內容,
+editor 通常有 plugin 提供比較好看的畫面讓你方便執行 merger
+```
+line 1
+line 2
+new line 3
+```
+修改之後，必須 add, 然後 commit
+```
+$ git add a.txt
+$ git commit
+```
+會出現以下 message 到 editor, 可以修改 message 或者直接存檔
+```
+Merge branch 'experiment'                                                       
+
+# Conflicts:
+#       a.txt
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#       .git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#       modified:   a.txt
+```
+
+看 log 可以發現兩條 branch 被 merge 在一起
+```
+$ git log --graph --oneline --decorate --all
+*   fbf1d98 (HEAD, master) Merge branch 'experiment'
+|\  
+| * 01f7130 (experiment) new line 3
+* | 6af315c append line 3
+|/  
+* b2a1931 update a.txt
+* 41e0e9f init
+```
