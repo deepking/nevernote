@@ -510,11 +510,60 @@ console.log(x);
 
 # Exception 
 
+處理異常情況。
+
+可以 throw string or [Error](http://devdocs.io/javascript/global_objects/error)
+
+```javascript
+function openFile(fileName) {
+    if (!fileName) {
+        throw "Invalid File Name";
+    } else {
+        return "Open File";
+    }
+}
+
+try {
+    var file = openFile(null);
+} catch(e) {
+    console.log(e);
+}
+```
+
+參考更多 [try..catch 範例](http://devdocs.io/javascript/statements/try...catch)
+
+# finally
+即使有 Exception 也會被執行。常用在 release resource，避免造成 leak.
+
+```javascript
+function openMyFile() {
+    console.log("open file");
+}
+function closeMyFile() {
+    console.log("close file");
+}
+function writeMyFile(data) {
+    throw "Write Error";
+    console.log("write", data);
+}
+
+var theData = "Hello";
+openMyFile();
+try {
+   // tie up a resource
+   writeMyFile(theData);
+} finally {
+   closeMyFile(); // always close the resource
+}
+```
+
+
 # Callback
 
 # Require
 
-# Advanced
+# Advance
+這部分有空或用到再看
 
 ## this
 
@@ -523,7 +572,11 @@ console.log(x);
 參考 http://devdocs.io/javascript/operators/this
 
 
-# 下一步
+## Module
+
+參考 http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+
+## 下一步
 
 - [JS Standard Lib](http://devdocs.io/javascript/)
     - Array
