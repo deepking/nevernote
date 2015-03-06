@@ -292,7 +292,7 @@ console.log(i);
 ```
 
 ## continue
-```
+```javascript
 var i = 0;
 var n = 0;
 while (i < 5) {
@@ -306,7 +306,7 @@ console.log(i, n);
 ```
 
 ## while loop
-```
+```javascript
 var n = 0;
 var x = 0;
 
