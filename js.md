@@ -512,7 +512,7 @@ console.log(x);
 
 處理異常情況。
 
-可以 throw string or [Error](http://devdocs.io/javascript/global_objects/error)
+參考 [Error](http://devdocs.io/javascript/global_objects/error)
 
 ```javascript
 function openFile(fileName) {
