@@ -561,7 +561,7 @@ try {
 # Callback
 JS error handling 比較常用 callback 的方式
 
-```
+```javascript
 function use(handler) {
     var ok = false;
     if (ok) {
@@ -583,6 +583,53 @@ use(function(err, data) {
 ```
 
 # Require
+
+這是 node 提供的 module
+- exports 表示其他人可以使用
+- require 表示使用其他 module, 如果不是在同目錄,必須給路徑
+
+在同一個目錄開啟兩個 file, foo.js, circle.js
+
+circle.js
+```javascript
+var PI = Math.PI;
+
+exports.area = function (r) {
+  return PI * r * r;
+};
+
+circumference = function (r) {
+  return 2 * PI * r;
+};
+```
+
+foo.js
+```javascript
+var circle = require('./circle.js');
+console.log( 'The area of a circle of radius 4 is ' + circle.area(4));
+var x = circle.circumference(4);
+console.log("x", x);
+```
+
+執行 foo.js ，會找不到 circumference function, 因為沒有 export
+```
+$ node foo.js
+The area of a circle of radius 4 is 50.26548245743669
+/private/tmp/foo.js:3
+var x = circle.circumference(4);
+               ^
+TypeError: undefined is not a function
+    at Object.<anonymous> (/private/tmp/foo.js:3:16)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Function.Module.runMain (module.js:501:10)
+    at startup (node.js:129:16)
+    at node.js:814:3
+```
+
+
 
 # Advance
 這部分有空或用到再看
