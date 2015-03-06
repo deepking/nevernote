@@ -176,7 +176,7 @@ console.log(5 > 8);
 // less than
 console.log(5 < 8);
 
-// greater than or equas
+// greater than or equal
 console.log(5 >= 5);
 
 // less than or equal
@@ -487,4 +487,20 @@ console.log(x);
 # Callback
 
 # Require
+
+# 下一步
+
+- [JS Standard Lib](http://devdocs.io/javascript/)
+    - Array
+    - String
+    - Math
+    - Number
+    - Date
+    - JSON
+- [Node Standard Lib](http://devdocs.io/node/)
+- [JS The Right Way](http://jstherightway.org/)
+
+其他會被 Compile 成 JS 的語言, 比較常見
+- [CoffeeScript](http://coffeescript.org/)
+- [TypeScript](http://www.typescriptlang.org/)
 
