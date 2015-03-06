@@ -291,6 +291,32 @@ for (i = 0; i < array.length; i++) {
 console.log(i);
 ```
 
+## continue
+```
+var i = 0;
+var n = 0;
+while (i < 5) {
+   i++;
+   if (i === 3) {
+      continue;
+   }
+   n += i;
+}
+console.log(i, n);
+```
+
+## while loop
+```
+var n = 0;
+var x = 0;
+
+while (n < 3) {
+  n++;
+  x += n;
+}
+console.log(n, x);
+```
+
 ## switch
 
 注意每個 case 都要接著 break, 否則會繼續執行下一個 case。
@@ -487,6 +513,15 @@ console.log(x);
 # Callback
 
 # Require
+
+# Advanced
+
+## this
+
+重要觀念，很容易出錯。
+
+參考 http://devdocs.io/javascript/operators/this
+
 
 # 下一步
 
