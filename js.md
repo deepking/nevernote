@@ -40,6 +40,31 @@ $ chmod +x myexec.js
 ```
 $ ./myexec.js
 ```
+## Browser
+開啟 file: myweb.html, 在 script tag 寫 javascirpt
+```html
+<!DOCYPE html>
+<html>
+    <meta charset="utf-8"> 
+    <head>
+        <title>Example</Title>
+        <script>
+            console.log("Hello World");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+```
+Browser 開啟 myweb.html, 看 console.log
+
+- FireFox
+
+    Menu: 工具 -> 網頁開發者 -> 網頁主控臺
+
+- Chrome
+
+    右上 Button: More Tools -> JavaScript Console
 
 
 # Data type
