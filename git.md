@@ -273,3 +273,41 @@ $ git log --graph --oneline --decorate --all
 * b2a1931 update a.txt
 * 41e0e9f init
 ```
+
+# Push
+
+![Create Github Repo](images/createGithubRepo.png)
+
+只要填名稱，其他選項不動。
+
+在 repo 加入 remote , 並且 push
+```
+$ git remote add origin https://github.com/deepking/test-git.git
+$ git push -u origin master
+```
+
+到 github 就可看到上傳的 file
+
+
+# Clone
+開啟另一個 shell，當作是另一個 user
+```
+$ git clone https://github.com/deepking/test-git bar
+$ cd bar
+```
+新增 file: b.txt
+```
+$ echo "line 1" > b.txt
+$ git add b.txt
+$ git commit -m "b.txt from bar"
+$ git push -u origin master
+```
+github 可以看到增加 b.txt
+
+# Pull
+回到 foo 目錄, 下載最新的 code
+```
+$ git pull
+```
+看到 b.txt 出現
+

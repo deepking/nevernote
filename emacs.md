@@ -46,8 +46,8 @@ Each buffer has one and only one major mode.
 ## Help system
 **C-h C-h**  show all hep commands.
 
-| Key    | function                | Meaning
-| ------ | ----------------------- | 
+| Key    | function                | Meaning                                       |
+| ------ | ----------------------- | --------------------------------------------- |
 | C-h i  | info                    | manual root                                   |
 | C-h m  | describe-mode           | see all the key bindings of the current mode  |
 | C-h w  | where-is                | commnad                                       |
