@@ -43,7 +43,7 @@ $ ./myexec.js
 ## Browser
 開啟 file: myweb.html, 在 script tag 寫 javascirpt
 ```html
-<!DOCYPE html>
+<!DOCTYPE html>
 <html>
     <meta charset="utf-8"> 
     <head>
