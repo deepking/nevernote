@@ -40,7 +40,11 @@ Response)
 $ node server.js
 ```
 
+open usl: http://localhost:3000
+
 ![ex2_http_login](images/ex2_http_login.png)
+
+click login
 
 ![ex2_http_loginOk](images/ex2_http_loginOk.png)
 
