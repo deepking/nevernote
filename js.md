@@ -217,6 +217,7 @@ console.log((5 === 8) || (5 === 5));
 console.log(!(5 === 8)); 
 ```
 
+## Loose Typing
 '==' 容易出錯，需要才使用, 一般儘量使用 '==='。'==' 它會自動轉 type,
 例如 string "1" 跟 number 1 會被視為相同。
 ```javascript
@@ -607,6 +608,42 @@ use(function(err, data) {
 });
 ```
 
+# Scope
+
+JS 變數沒有 Block scope，JS 變數在 Function 內都是相同
+Scope。不能假設變數只有在 Block 不會影響外層的變數。
+
+這點跟大部分其他語言都不相同。
+```javascript
+function foo() {
+    var x = 0, i = 0;
+
+    if (true) {
+        var x = 1;
+    }
+
+    for (var i = 0; i < 5; i++) {
+    }
+
+    console.log(x);
+    console.log(i);
+}
+foo();
+```
+## onevar
+宣告變數在 function 一開始的一個 var 裡。
+
+[解釋](http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html)
+```javascript
+function foo() {
+    var a, b, c,
+        i = 0,
+        y = 1;
+
+    // logic ...
+}
+```
+
 # Require
 
 這是 node 提供的 module
@@ -657,20 +694,29 @@ TypeError: undefined is not a function
 
 
 # Advance
-這部分有空或用到再看
+
+很多東西都是用現有JS模擬達到，但未來 [ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
+會提供，所以以下會劃掉表示。看一些 lib 需要瞭解這些歷史包袱。
 
 ## this
 
-重要觀念，很容易出錯。
+重要觀念，很容易出錯。參考 http://devdocs.io/javascript/operators/this
 
-參考 http://devdocs.io/javascript/operators/this
+## prototype
 
+重要觀念，參考 http://www.codedata.com.tw/javascript/essential-javascript-15-prototype/
 
 ## Module
 
-參考 http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+~~http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html~~
+
+## OOP
+
+~~https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript~~
+
 
 ## 下一步
+
 
 - [JS Standard Lib](http://devdocs.io/javascript/)
     - Array
