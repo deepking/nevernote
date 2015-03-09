@@ -1,10 +1,9 @@
 # Tutorial
 
 ## Basic
-- [JS Road Trip part1](https://www.codeschool.com/courses/javascript-road-trip-part-1)
-- [JS Road Trip part2](https://www.codeschool.com/courses/javascript-road-trip-part-2)
+- [JS CodeSchool](https://www.codeschool.com/paths/javascript)
+- [HTML & CSS](https://www.codeschool.com/paths/html-css)
 - [JS CodeCademy](http://www.codecademy.com/zh/tracks/javascript)
-- [CSS Cross Country](https://www.codeschool.com/courses/css-cross-country)
 - [Try jQuery](https://www.codeschool.com/courses/try-jquery)
 
 
