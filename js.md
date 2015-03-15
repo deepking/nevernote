@@ -1,6 +1,7 @@
 # Tutorial
 
 ## Basic
+- [ConciseJS](https://slides.com/concise/js/fullscreen#/)
 - [JS CodeSchool](https://www.codeschool.com/paths/javascript)
 - [HTML & CSS](https://www.codeschool.com/paths/html-css)
 - [JS CodeCademy](http://www.codecademy.com/zh/tracks/javascript)
@@ -653,7 +654,7 @@ function foo() {
 }
 ```
 
-# Require
+# Module
 
 這是 node 提供的 module
 - exports 表示其他人可以使用
@@ -699,7 +700,19 @@ TypeError: undefined is not a function
     at startup (node.js:129:16)
     at node.js:814:3
 ```
+另一種 module.exports
+```
+var app = {
+    x: 1;
+    y: 2;
+};
+module.exports = app;
 
+
+// other js
+var app = require("app");
+console.log(app.x, app.y);
+```
 
 
 # Advance
